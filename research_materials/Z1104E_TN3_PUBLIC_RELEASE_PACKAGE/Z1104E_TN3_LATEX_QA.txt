@@ -1,0 +1,13 @@
+Z1104E-TN3 FINAL RELEASE QA
+DOI: 10.5281/zenodo.22149735
+
+Scientific content: unchanged from audited TN2 except addition of archival DOI metadata/text.
+LaTeX: pdflatex 3-pass PASS.
+Undefined references/citations: 0.
+Overfull boxes: 0.
+Underfull boxes: 1 (pre-existing minor paragraph warning; no clipping observed).
+PDF pages: 8 A4.
+PDF metadata: title/author/subject/keywords present; DOI included in Subject.
+Render QA: 8/8 pages rendered successfully; title page and final page visually inspected PASS.
+DOI visible on title page: PASS.
+DOI present in Data and reproducibility statement: PASS.

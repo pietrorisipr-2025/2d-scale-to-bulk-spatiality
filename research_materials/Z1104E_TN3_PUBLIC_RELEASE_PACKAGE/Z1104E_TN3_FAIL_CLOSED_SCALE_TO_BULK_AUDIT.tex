@@ -1,0 +1,288 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[margin=2.3cm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,mathtools}
+\usepackage{booktabs,longtable,array}
+\usepackage{microtype}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{enumitem}
+\usepackage{caption}
+\usepackage{float}
+\hypersetup{colorlinks=true,linkcolor=blue!50!black,citecolor=blue!50!black,urlcolor=blue!50!black,
+pdftitle={A Fail-Closed Audit of Scale-to-Bulk Spatiality in a Two-Dimensional Multiscale Toy Framework},
+pdfauthor={Pietro Risi},
+pdfsubject={Technical note. DOI: 10.5281/zenodo.22149735},
+pdfkeywords={emergent geometry, multiscale geometry, wavelets, scale-to-bulk, operator locality, presymplectic geometry, gauge redundancy}}
+\setlist{nosep}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\rank}{\operatorname{rank}}
+\newcommand{\Row}{\operatorname{Row}}
+\newcommand{\Img}{\operatorname{Im}}
+\newcommand{\Ker}{\operatorname{Ker}}
+\newcommand{\norm}[1]{\left\lVert #1\right\rVert}
+\title{\textbf{A Fail-Closed Audit of Scale-to-Bulk Spatiality\\in a Two-Dimensional Multiscale Toy Framework}}
+\author{Pietro Risi\\Independent researcher}
+\date{August 2026}
+
+\begin{document}
+\maketitle
+\begin{center}
+\small\href{https://doi.org/10.5281/zenodo.22149735}{DOI: 10.5281/zenodo.22149735}
+\end{center}
+\vspace{0.5em}
+
+\begin{abstract}
+We investigate a deliberately narrow question: when a two-dimensional microscopic model is reorganized across renormalization or wavelet scales, under what conditions can the scale direction be interpreted as an additional local spatial direction rather than as an information-geometric label, a network depth, or a redundant computational coordinate? The study uses a fail-closed sequence of preregistered diagnostics. Positive controls show that multiscale structure can generate nontrivial information geometry, higher-dimensional network connectivity, dynamically derived cross-scale response, and boundary-induced presymplectic gauge redundancy. Negative controls then test whether these structures are sufficient for local spatiality. Two bounded obstructions survive independent replication. First, for a finite periodic massless two-dimensional nearest-neighbor Laplacian on an $N=2^m$ lattice with a standard periodized separable dyadic db1--db4 hierarchy, exact same/adjacent-resolution generalized intertwining forces the deepest physical stiffness action to vanish once its parent lies after at least two coarse-graining steps. The mechanism is a Fourier-alias invariant-core collapse. Second, for a fixed redundant db2 embedding, exact preservation of both the boundary pullback and the boundary-invisible gauge fibers uniquely fixes the induced bilinear form; that unique form retains non-nearest-scale couplings. Neither result is a no-go theorem for holography, MERA/cMERA, interacting quantum field theory, or emergent dimensions in general. The supported conclusion is narrower: in the tested constructions, scale-to-bulk organization does not by itself derive an independent local third spatial dimension. The note emphasizes the diagnostic workflow, explicit escape routes, independent replication, and claim boundaries.
+\end{abstract}
+
+\section{Motivation and claim boundary}
+The statement ``a lower-dimensional description can encode a higher-dimensional geometry'' is well established in several modern frameworks. Entanglement renormalization in two spatial dimensions is a mature tensor-network construction \cite{evenbly2009}; cMERA has been used to define an emergent metric in the scale direction from quantum-field-theoretic data \cite{nozaki2012}; and exact holographic mappings can map a boundary Hilbert space unitarily to a bulk representation with one additional organizational direction \cite{qi2013}. These facts make it important to distinguish several logically different statements:
+\begin{align*}
+\text{scale label} &\neq \text{information geometry},\\
+\text{information geometry} &\neq \text{network geometry},\\
+\text{network geometry} &\neq \text{local physical space}.
+\end{align*}
+
+The present study asks only whether a set of explicitly tested two-dimensional multiscale constructions crosses these distinctions without inserting the desired spatial geometry by hand. It does \emph{not} test the holographic principle, AdS/CFT, MERA/cMERA as general frameworks, or quantum gravity. It also does not claim that the physical universe is fundamentally two-dimensional.
+
+The work originated as a replacement for an older mechanical-extrusion intuition. The central methodological change is that no coordinate is declared spatial merely because it orders scales. A scale direction is promoted only if it survives successively stronger operational tests.
+
+\section{Fail-closed workflow}
+The branch was organized as a sequence of gates. A later test was not allowed to retroactively convert an earlier failure into a pass by changing thresholds or target observables. Several diagnostics were explicitly rejected when negative controls showed that they were not discriminating.
+
+\begin{table}[H]
+\centering
+\caption{Compressed map of the main diagnostic stages.}
+\small
+\begin{tabular}{p{1.4cm}p{5.0cm}p{7.1cm}}
+\toprule
+Stage & Question & Outcome \\
+\midrule
+E1--E3 & Does scale produce a metric, and is that metric spatial? & Scale-dependent state distance can be nonzero, but the first construction is information geometry only; the joint spatial rank test fails. \\
+E4--E5 & Can a multiscale network supply a higher-dimensional architecture? & Yes at network level; physical spatiality remains unestablished without dynamics derived from the boundary model. \\
+E6--E14 & Do derived operators propagate through the multiscale structure? & Yes. Boundary-derived dynamics sees multiscale locality and strongly prefers nested ancestor/descendant relations. \\
+E15--E18 & Is the scale direction locally metric? & No in the tested Haar/db2--db4 constructions. A nonstandard wavelet representation makes scale recursion local only by retaining redundant constrained coordinates. \\
+E19--E28 & Can exact local generalized dynamics preserve all levels? & A bounded terminal-stiffness obstruction is derived for the frozen massless/free nearest-scale class; massive and wider-bandwidth escapes are identified. \\
+E30--E33 & Do interactions or adaptive maps remove the obstruction? & Finite retained dimension improves low-mode invariance, but the improvement is not interaction-specific; adaptive maps improve compression without establishing the spatiality gate. \\
+E34--E37 & Can redundancy be true gauge rather than bookkeeping? & A boundary-induced presymplectic gauge interpretation exists, but for the fixed embedding the exact gauge-fiber form is unique and non-nearest-scale. \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{From scale dependence to operator locality}
+A first calibration used a scale-dependent family of states and a fidelity metric. If changing the scale parameter does not change the physical state after trivial rescaling, then the scale component of the information metric vanishes. A nontrivial scale flow can instead give $g_{uu}>0$, as is familiar in cMERA-like constructions \cite{nozaki2012}. This is necessary for a nondegenerate scale geometry but is not sufficient for spatiality: a coupling or information metric can live on parameter space.
+
+A stronger positive control used a discrete entanglement-renormalization architecture. Without importing an AdS metric, the graph already contains two in-layer directions and one inter-layer direction. The crucial ablation result was that hierarchy alone is insufficient: locality must be preserved across scales. Randomizing the parent map while preserving level counts and degree structure destroys the boundary-local ordering of network distances.
+
+The next gate introduced dynamics derived from the two-dimensional model. For a harmonic boundary operator $K$, the retarded response
+\begin{equation}
+R(t)=K^{-1/2}\sin(K^{1/2}t)
+\end{equation}
+was projected between gauge-invariant multiscale subspaces. In the structured hierarchy, early response and arrival time correlate strongly with relational distance, while a scrambled hierarchy gives substantially weaker correlations. Cross-scale response is therefore not merely a graph decoration: boundary-derived operators can detect the multiscale organization.
+
+An even sharper test compares nested parent/child pairs with nonnested pairs at the same scale separation. The structured hierarchy displays a large preference for nested ancestry; this preference disappears under scrambling. Nevertheless, a local spatial coordinate requires more than ancestry. Arrival-time increments and direct couplings must also suppress long jumps along the putative radial direction.
+
+\section{Failure of local radial propagation}
+For Haar and subsequently db2--db4 wavelets, increasing scale separation does order arrivals and suppress response, but not strongly enough to satisfy the preregistered local-propagation conditions. A finer temporal grid confirms that this is not a time-resolution artifact.
+
+The db2 basis is a particularly useful adversarial control because it is selected by a boundary-only smoothness criterion more strongly than Haar and improves cross-scale suppression. Even so, the arrival increments remain too small. The result is not ``no scale structure'' but rather
+\begin{equation}
+\text{derived multiscale dynamics} \not\Rightarrow \text{locally metric scale direction}
+\end{equation}
+for the tested family.
+
+The nonstandard wavelet representation of Beylkin--Coifman--Rokhlin is relevant here. Wavelet operator representations and their nonstandard forms are classical \cite{bcr1991,beylkin1992}; exact two-dimensional periodic differential-operator representations are also known \cite{wavelet2d2004}. In the present finite construction, retaining intermediate coarse variables produces an explicitly nearest-scale recursive computation, but the extended vector has 340 coordinates for only 256 independent boundary degrees of freedom. The extra 84 coordinates are exact redundancies, not independent spatial degrees of freedom.
+
+\section{A bounded terminal-stiffness obstruction}
+We now isolate the strongest bounded result and make explicit the two support facts used by the proof. Let $N=2^m$ and let $L_1$ be the periodic one-dimensional nearest-neighbor Laplacian,
+\begin{equation}
+\lambda(k)=2-2\cos(2\pi k/N).
+\end{equation}
+For the standard minimal-support orthonormal Daubechies filters db$\nu$, $\nu=1,\ldots,4$, the low-pass symbol has the usual factor $\bigl(1+e^{i\xi}\bigr)^\nu$; the remaining Daubechies spectral factor has no unit-circle zero. Thus the only unit-circle zero of the low-pass symbol is at $\xi=\pi$ modulo $2\pi$ \cite{daubechies1988,beylkin1992}. Let $H_r$ denote the periodized one-dimensional scaling subspace after $r$ dyadic low-pass/downsampling steps. In Fourier space, its coarse sector $p=0,\ldots,N/2^r-1$ lifts to the alias family
+\begin{equation}
+k_j=p+jN/2^r,\qquad j=0,\ldots,2^r-1.
+\end{equation}
+
+\subsection{Cascade-support and tensor-core lemmas}
+\textbf{Lemma 1 (cascade support in the frozen db1--db4 class).}
+For the hierarchy above, the $p=0$ coarse sector has only the fine $k=0$ alias with nonzero cascade amplitude. Every coarse sector $0<p<N/2^r$ has nonzero cascade amplitude on all $2^r$ aliases $k_j$.
+
+\textit{Proof.}
+A cascade coefficient can vanish only if, at some intermediate stage $s=0,\ldots,r-1$, the corresponding low-pass argument reaches $\pi$ modulo $2\pi$. For $p=0$ and $j\ne0$, write $j=2^v q$ with $q$ odd. Choosing $s=r-v-1$ makes the corresponding factor see an odd multiple of $\pi$, so that alias is eliminated; the $k=0$ alias survives.
+
+For $p\ne0$, a zero at stage $s$ would require
+\begin{equation}
+p+jN/2^r\equiv N/2^{s+1}\pmod{N/2^s}.
+\end{equation}
+Because $s+1\le r$, reducing this congruence modulo $N/2^r$ gives $p\equiv0\pmod{N/2^r}$, contradicting $0<p<N/2^r$. Hence no cascade factor vanishes in a nonzero coarse sector. \hfill$\square$
+
+It follows that a nonzero one-dimensional coarse sector is invariant under $L_1$ only if all $2^r$ aliases carry the same Laplacian eigenvalue. At one coarse step, the pair $p,p+N/2$ has eigenvalues $2\mp2\cos\theta$. Equality gives $\cos\theta=0$, producing the active $p=N/4$ sector; the $p=0$ sector reduces to the constant mode by Lemma 1. Thus the one-step one-dimensional invariant core has actions $0$ and $2$.
+
+For $r\ge2$, a nonzero sector contains, with nonzero amplitudes, aliases separated by both $N/2$ and $N/4$. Equality under the $N/2$ shift requires
+\begin{equation}
+\cos\theta=0,
+\end{equation}
+whereas equality under the $N/4$ shift requires
+\begin{equation}
+\cos\theta=-\sin\theta.
+\end{equation}
+These cannot hold simultaneously. Hence for $r\ge2$ the one-dimensional invariant core is exactly the constant sector,
+\begin{equation}
+C_r=\operatorname{span}\{\mathbf 1\},\qquad L_1\mathbf1=0.
+\end{equation}
+
+\textbf{Lemma 2 (separable two-dimensional invariant core).}
+Let $P_r$ be the orthogonal projector onto $H_r$, $Q_r=I-P_r$, and let
+\begin{equation}
+L_2=L_1\otimes I+I\otimes L_1
+\end{equation}
+act on the separable scaling space $\mathcal H_r=H_r\otimes H_r$. If
+\begin{equation}
+C_r=\{u\in H_r:L_1u\in H_r\},
+\end{equation}
+then the $L_2$-invariant core of $\mathcal H_r$ is $C_r\otimes C_r$.
+
+\textit{Proof.}
+For $\psi\in H_r\otimes H_r$, leakage of $L_2\psi$ out of $\mathcal H_r$ has one component in $H_r^\perp\otimes H_r$, generated by $(Q_rL_1P_r)\otimes I$, and one in $H_r\otimes H_r^\perp$, generated by $I\otimes(Q_rL_1P_r)$. These subspaces are orthogonal, so the two leakages cannot cancel. Both vanish exactly when $\psi\in C_r\otimes H_r$ and $\psi\in H_r\otimes C_r$, whose intersection is $C_r\otimes C_r$. \hfill$\square$
+
+Consequently, at one coarse step the separable two-dimensional invariant-core actions are
+\begin{equation}
+0,\;2,\;2,\;4,
+\end{equation}
+and for $r\ge2$ the two-dimensional invariant core is only
+\begin{equation}
+\operatorname{span}\{\mathbf1\otimes\mathbf1\},
+\end{equation}
+with zero massless Laplacian action.
+
+\subsection{Bounded proposition}
+\textbf{Proposition 1 (terminal-stiffness obstruction in the frozen class).}
+Consider a finite periodic $N\times N$ lattice with $N=2^m$, the massless nearest-neighbor scalar Laplacian $L=L_2$, and the standard periodized separable dyadic db1--db4 hierarchy used in this audit. At each retained resolution level $\ell$, let $A_\ell$ be the complete stage block consisting of that stage's detail coefficients together with its retained coarse coefficients. Then the row spaces are nested, $\Row(A_\ell)\subseteq\Row(A_{\ell-1})$, and coincide with the corresponding parent scaling spaces. Let the redundant stacked map $A$ satisfy an exact generalized intertwining relation
+\begin{equation}
+KA=MAL.
+\end{equation}
+Assume $M$ and $K$ couple only the same resolution level or immediately adjacent resolution levels. If the parent row space of the deepest retained level is a scaling space after at least two dyadic coarse-graining steps, then the deepest physical stiffness action vanishes:
+\begin{equation}
+(KA)_d=0.
+\end{equation}
+Hence a requirement of nonzero stiffness participation at every retained resolution level is incompatible with this frozen class.
+
+\textit{Proof.}
+At the deepest level, nearest-scale locality gives
+\begin{equation}
+K_{d,d-1}A_{d-1}+K_{dd}A_d
+=\left(M_{d,d-1}A_{d-1}+M_{dd}A_d\right)L.
+\end{equation}
+Define $Y_d=M_{d,d-1}A_{d-1}+M_{dd}A_d$. Nestedness gives $\Row(Y_d)\subseteq H_{d-1}=\Row(A_{d-1})$. The left-hand side also has rows in $H_{d-1}$, so exact intertwining requires $\Row(Y_dL)\subseteq H_{d-1}$. Thus every row of $Y_d$ belongs to the $L$-invariant core of $H_{d-1}$. By Lemmas 1 and 2, once that parent lies after at least two coarse steps its invariant core is $\operatorname{span}\{\mathbf1\otimes\mathbf1\}$. The massless periodic Laplacian annihilates this mode, hence $Y_dL=0$ and therefore $(KA)_d=0$. \hfill$\square$
+
+The proposition does not use positivity of $M$, energy isometry, or symmetry of $M$ and $K$. Its limitations are equally explicit. A mass term leaves the invariant core unchanged but changes $L\mathbf1=0$ to $(L+\mu^2I)\mathbf1=\mu^2\mathbf1$, allowing at most a one-dimensional global constant escape. In the specific four-level E28 realization, allowing direct couplings over two resolution levels reaches the active one-step invariant core; in a deeper hierarchy, a width-two skip need not do so. Interacting or non-Laplacian microscopic operators require a separate invariant-core calculation.
+
+The alias mechanism is closely related to standard local Fourier analysis of multigrid, where coarse sampling organizes fine-grid Fourier modes into harmonic/alias families \cite{trottenberg2001,kahl2020}. Proposition 1 is therefore presented as a bounded corollary for the frozen construction, not as a new general wavelet theorem.
+
+\section{Interactions, retained dimension, and adaptive maps}
+A small interacting two-dimensional transverse-field Ising control was used to test whether the free/Gaussian hypothesis is the missing ingredient. At small retained dimension $\chi$, low-mode invariance is imperfect. Raising $\chi$ improves the retained low-energy sector substantially; however, a causal control at $J=0$ shows that the improvement is already present without interactions. The appropriate conclusion is finite-$\chi$ recovery of approximate invariance, not an interaction-driven escape from Proposition 1.
+
+A boundary-optimized adaptive map with disentanglers improves the median low-mode residual by roughly 37\% relative to the fixed blocking baseline, but a separate local-operator-retention diagnostic does not improve by the preregistered amount. This is recorded as better compression, not as evidence for an emergent spatial dimension. Entanglement-renormalization algorithms that optimize isometries and disentanglers for low-energy sectors are standard prior art \cite{evenbly2009alg,evenbly2009}.
+
+\section{Redundancy, constraints, and presymplectic gauge fibers}
+The 340-dimensional extended coordinate vector is an injective image of a 256-dimensional boundary vector,
+\begin{equation}
+y=Ax,\qquad A:\R^{256}\rightarrow\R^{340},\qquad \rank A=256.
+\end{equation}
+The 84 redundancies can be expressed as 84 exact local consistency constraints between adjacent scales. If one nevertheless assigns all 340 coordinates independent canonical momenta, the associated position/momentum constraints are second-class. A first-class completion can be manufactured by adding auxiliary canonical pairs, but those variables are not derived from the boundary theory.
+
+A more natural construction pulls the boundary symplectic structure into the redundant coordinates. Let
+\begin{equation}
+E=\mathrm{diag}(A,A),
+\end{equation}
+and let $J$ be the canonical boundary symplectic matrix. The induced two-form
+\begin{equation}
+\Omega=(E^+)^T J E^+
+\end{equation}
+has rank 512 and 168 null directions, exactly matching the phase-space fibers invisible to the boundary. The lifted Hamiltonian is constant along those directions. In this sense the redundant coordinates admit a genuine boundary-derived presymplectic gauge interpretation. Null directions and reduction of presymplectic forms are standard elements of constrained Hamiltonian geometry \cite{gotay1978}.
+
+However, the induced form remains non-nearest-scale. In the frozen embedding, approximately $4.36\%$ of the Frobenius norm of the relevant cross-block lies at scale separations $|\Delta\ell|\ge2$.
+
+\subsection{Fixed-embedding uniqueness}
+\textbf{Lemma 2 (fixed exact-fiber bilinear form).}
+Let $A:\R^n\to\R^m$ have full column rank, $S=\Img A$, and $N=\Ker A^T=S^\perp$. Suppose a matrix $M$ satisfies
+\begin{enumerate}
+\item $A^TMA=I$;
+\item $\Ker M=N$ and $\Ker M^T=N$;
+\item $\rank M=n$.
+\end{enumerate}
+Then $M$ is unique and
+\begin{equation}
+M=(A^+)^TA^+.
+\end{equation}
+
+\textit{Proof.}
+The left and right kernel conditions imply $M=PMP$, where $P$ projects orthogonally onto $S$. If $M_1,M_2$ are two solutions and $D=M_1-M_2$, then $D=PDP$ and $A^TDA=0$. For any $y=Ax,z=Aw\in S$,
+\begin{equation}
+y^TDz=x^TA^TDAw=0.
+\end{equation}
+Thus $D$ vanishes on $S\times S$ and, since $D=PDP$, it vanishes everywhere. The displayed pseudoinverse form satisfies the conditions. \hfill$\square$
+
+This lemma is elementary linear algebra and is not claimed as a new general theorem. Its diagnostic consequence is specific: for the fixed E18 embedding, exact preservation of the boundary pullback and exact boundary-invisible fibers leaves no freedom to replace the measured non-nearest-scale form by a nearest-scale alternative.
+
+\section{Independent replication}
+After branch closure, E26/E27 and E37 were independently reconstructed without loading the original E26/E27 numerical products or the original E37 matrix/reproducer.
+
+The first independent reconstruction tested db1--db4 at $N=8,16,32,64$ and every available depth $r\ge2$: 40/40 one-dimensional invariant-core tests return dimension one with numerically zero restricted Laplacian eigenvalue. A subsequent referee-style stress audit extended the grid through $N=128,256$, giving 84/84 one-dimensional cases in total. It also checked 240 Fourier coarse sectors directly: the constant sector has exactly one surviving alias, while every nonzero sector has exactly $2^r$ surviving aliases. Finally, 20/20 direct two-dimensional checks across db1--db4 at $N=8,16$ reproduce the tensor-core prediction: actions $0,2,2,4$ at one coarse step and a one-dimensional zero-action core after two or more steps.
+
+The E37 embedding reconstructed from repeated db2 analysis has shape $340\times256$, rank 256, and redundancy 84. The independently constructed matrix $(A^+)^TA^+$ has pullback error $2.48\times10^{-15}$, and the independently measured remote-coupling fraction is
+\begin{equation}
+0.04355761856675537,
+\end{equation}
+matching the closed-branch value.
+
+These checks establish reproducibility of the two endpoints. They do not establish novelty.
+
+\section{Prior art and novelty limits}
+The computational and mathematical ingredients used here have substantial precedent. The compactly supported orthonormal Daubechies construction and its filter-zero structure are classical \cite{daubechies1988}; exact wavelet representations of differential operators and nonstandard multiscale forms are likewise classical \cite{bcr1991,beylkin1992}. Two-dimensional periodic differential-operator representations in separable wavelet bases are established \cite{wavelet2d2004}. Standard wavelet forms exhibit cross-scale ``finger'' structures, and special wavelet families can restrict differential-operator interactions to adjacent scales \cite{beylkin1997}. Multigrid local Fourier analysis treats the aliasing of fine-grid modes under coarse sampling as a basic tool \cite{trottenberg2001,kahl2020}. Intertwining-based multiresolution constructions also exist in graph settings \cite{avena2020}. Presymplectic null directions and gauge reduction are classical \cite{gotay1978}.
+
+A targeted search did not locate the exact terminal-stiffness statement of Proposition 1, but its proof uses standard filter-zero and alias-family ingredients. Its novelty status therefore remains unresolved. The fixed-embedding Lemma 2 should be treated as an elementary diagnostic rather than a novelty claim.
+
+\section{What was not derived}
+The branch does not derive:
+\begin{itemize}
+\item an independent third spatial degree of freedom;
+\item a Lorentzian spacetime metric;
+\item Einstein dynamics or a massless spin-2 sector;
+\item Newtonian gravity as a consequence of scale emergence;
+\item a falsification of holography, MERA, cMERA, AdS/CFT, or emergent dimensions in general.
+\end{itemize}
+
+The strongest supported statement is narrower. The tested models can produce multiscale geometry, operator response, and even a boundary-derived gauge-redundant bulk representation. In the same constructions, however, the scale direction fails the stronger locality requirements needed to interpret it as an independent local spatial coordinate.
+
+\section{Conclusion}
+The audit separates several notions that are easily conflated. Nonzero distance between scales can be information geometry. Multiscale causal organization can be network geometry. Derived operator response can make that organization physically meaningful without making scale a local spatial coordinate. Redundant coordinates can possess a genuine presymplectic gauge interpretation while remaining nonlocal across scale.
+
+Within the frozen free/massless separable dyadic class, the Fourier-alias analysis gives a bounded terminal-stiffness obstruction. Within the fixed redundant db2 embedding, exact boundary pullback and exact gauge fibers uniquely select a bilinear form that is not nearest-scale. Independent reconstruction reproduces both endpoints.
+
+Accordingly, this branch is closed as a bounded negative and methodological result. A scientifically distinct continuation would require a separately motivated microscopic ingredient rather than another retuning of wavelet family, threshold, or scale label.
+
+\section*{Data and reproducibility statement}
+The branch was developed through versioned, fail-closed checkpoints with frozen gate records. The post-closure independent replication reconstructs the two principal endpoints from first principles and records machine-readable CSV/JSON outputs. The public archival record is available at \href{https://doi.org/10.5281/zenodo.22149735}{DOI: 10.5281/zenodo.22149735}. The archival release includes the manuscript source, replication/audit material, claim-boundary records, and release metadata.
+
+\begin{thebibliography}{99}
+\bibitem{daubechies1988} I. Daubechies, ``Orthonormal bases of compactly supported wavelets, \textit{Communications on Pure and Applied Mathematics} 41(7), 909--996 (1988). DOI: 10.1002/cpa.3160410705.
+\bibitem{bcr1991} G. Beylkin, R. Coifman, V. Rokhlin, ``Fast wavelet transforms and numerical algorithms I,'' \textit{Communications on Pure and Applied Mathematics} 44, 141--183 (1991). DOI: 10.1002/cpa.3160440202.
+\bibitem{beylkin1992} G. Beylkin, ``On the Representation of Operators in Bases of Compactly Supported Wavelets,'' \textit{SIAM Journal on Numerical Analysis} 29(6), 1716--1740 (1992). DOI: 10.1137/0729097.
+\bibitem{beylkin1997} G. Beylkin, J. M. Keiser, ``An Adaptive Pseudo-Wavelet Approach for Solving Nonlinear Partial Differential Equations,'' in \textit{Multiscale Wavelet Methods for Partial Differential Equations}, Wavelet Analysis and Its Applications 6 (1997). DOI: 10.1016/S1874-608X(97)80006-4.
+\bibitem{wavelet2d2004} M. A. Hajji, S. Melkonian, R. Vaillancourt, ``Representation of differential operators in wavelet basis,'' \textit{Computers \& Mathematics with Applications} 47, 1011--1033 (2004). DOI: 10.1016/S0898-1221(04)90083-1.
+\bibitem{trottenberg2001} U. Trottenberg, C. W. Oosterlee, A. Schuller, \textit{Multigrid}, Academic Press (2001), Chapter 4: Local Fourier Analysis.
+\bibitem{kahl2020} K. Kahl, N. Kintscher, ``Automated Local Fourier Analysis,'' \textit{BIT Numerical Mathematics} 60, 651--686 (2020). DOI: 10.1007/s10543-019-00797-w.
+\bibitem{avena2020} L. Avena, F. Castell, A. Gaudilliere, C. Melot, ``Intertwining wavelets or multiresolution analysis on graphs through random forests,'' \textit{Applied and Computational Harmonic Analysis} 48, 949--992 (2020). DOI: 10.1016/j.acha.2018.09.006.
+\bibitem{evenbly2009alg} G. Evenbly, G. Vidal, ``Algorithms for entanglement renormalization,'' \textit{Physical Review B} 79, 144108 (2009). DOI: 10.1103/PhysRevB.79.144108.
+\bibitem{evenbly2009} G. Evenbly, G. Vidal, ``Entanglement Renormalization in Two Spatial Dimensions,'' \textit{Physical Review Letters} 102, 180406 (2009). DOI: 10.1103/PhysRevLett.102.180406.
+\bibitem{nozaki2012} M. Nozaki, S. Ryu, T. Takayanagi, ``Holographic Geometry of Entanglement Renormalization in Quantum Field Theories,'' \textit{Journal of High Energy Physics} 2012, 193 (2012). DOI: 10.1007/JHEP10(2012)193.
+\bibitem{qi2013} X.-L. Qi, ``Exact holographic mapping and emergent space-time geometry,'' arXiv:1309.6282 (2013).
+\bibitem{chua2017} V. Chua, V. Passias, A. Tiwari, S. Ryu, ``Holographic dynamics from multiscale entanglement renormalization ansatz,'' \textit{Physical Review B} 95, 195152 (2017). DOI: 10.1103/PhysRevB.95.195152.
+\bibitem{gotay1978} M. J. Gotay, J. M. Nester, G. Hinds, ``Presymplectic manifolds and the Dirac--Bergmann theory of constraints,'' \textit{Journal of Mathematical Physics} 19, 2388--2399 (1978). DOI: 10.1063/1.523597.
+\end{thebibliography}
+
+\end{document}

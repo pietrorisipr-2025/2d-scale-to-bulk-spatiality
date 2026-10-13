@@ -1,0 +1,32 @@
+{
+  "record": "22149735",
+  "present_in_repo": 1,
+  "original_record_files": 3,
+  "source_file_sha256_and_zenodo_md5": "ALL_PASS",
+  "original_file_bytes_unmodified": true,
+  "release_bundle_sha256": "37e7074855919ee86ed80df6dd51b09af765ed36e18c699a0d135a34c7b9590f",
+  "repo_starter_sha256": "efd81ad50287bde7ba117561bb914109a2f406708b1677a5b9d86bb193a318dc",
+  "embedded_research_archives": [
+    {
+      "name": "Z1104E_TN3_PUBLIC_RELEASE_PACKAGE.zip",
+      "files": 14,
+      "total_uncompressed_bytes": 337715,
+      "crc": "PASS"
+    }
+  ],
+  "manifests": [
+    {
+      "source": "Z1104E_TN3_PUBLIC_RELEASE_PACKAGE.zip",
+      "path": "Z1104E_TN3_PUBLIC_RELEASE_PACKAGE/MANIFEST.sha256",
+      "pass": 12,
+      "mismatch_or_missing": []
+    }
+  ],
+  "pdfs": [
+    {
+      "name": "Z1104E_TN3_FAIL_CLOSED_SCALE_TO_BULK_AUDIT.pdf",
+      "pages": 8,
+      "page1_title_text": "A Fail-Closed Audit of Scale-to-Bulk Spatiality in a Two-Dimensional Multiscale Toy Framework Pietro Risi Independent researcher August 2026 DOI: 10.5281/zenodo.22149735 "
+    }
+  ]
+}
